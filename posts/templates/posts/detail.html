@@ -1,0 +1,25 @@
+{% extends 'posts/base.html' %}
+
+{% block content %}
+
+    <div class="col-sm-8 col-sm-offset-2">
+    <img src="{{ instance.image.url }}" class="img-responsive">
+    <h1>{{ title }} <small>{% if instance.draft %}
+    <span style="color: #993300"> Draft</span>
+    {% endif %} {{ instance.publish }}</small></h1>
+    <div class="fb-like" data-href="{{ request.build_absolute_url }}" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
+     </hr></br>
+    <p>
+        {{ instance.content }}
+        {% if instance.author %}
+            </p>
+    <p>Author: {{ instance.author.get_full_name }}</p>
+    {% endif %}
+
+    <div class="row">
+    </hr>   </br>
+    <div class="fb-comments" data-href= "{{ request.build_absolute_url }}" data-numposts="5"></div>
+    </div>
+    </div>
+
+{% endblock content %}

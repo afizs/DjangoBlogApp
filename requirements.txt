@@ -1,0 +1,5 @@
+Django==1.9.8
+django-filter==0.14.0
+djangorestframework==3.4.6
+pillow==3.3.1
+requests==2.10.0
